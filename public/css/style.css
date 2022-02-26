@@ -1,0 +1,133 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    padding-top: 4em;
+    padding-bottom: 4em;
+    display: flex;
+    justify-content: center;
+
+
+}
+
+/*formulier*/
+
+form {
+    max-width: 30em;
+    background-color: rgb(147, 206, 255);
+    border-radius: 5px;
+}
+
+input,
+button,
+textarea {
+    margin: 1em;
+    padding: .4em;
+    border: 1px solid lightgray;
+    box-shadow: 3px 3px 3px lightgray;
+}
+
+input[type="radio"] {
+    box-shadow: none;
+}
+
+input[type="text"] {
+    margin: 1em;
+    margin-top: 0.5em;
+    font-family: 'Fjalla One',
+        sans-serif;
+    color: black;
+}
+
+input[type="tel"] {
+    margin: 1em;
+    margin-top: 0.5em;
+    font-family: 'Fjalla One',
+        sans-serif;
+    color: black;
+}
+
+input[type="email"] {
+    margin: 1em;
+    margin-top: 0.5em;
+    font-family: 'Fjalla One',
+        sans-serif;
+    color: black;
+}
+
+textarea {
+    margin: 1em;
+    margin-top: 0.5em;
+    font-family: 'Fjalla One',
+        sans-serif;
+    color: black;
+
+}
+
+button {
+    background-color: lightgray;
+    color: black;
+    font-weight: bold;
+    border: 0;
+    padding: .7em;
+    transition: .3s;
+
+}
+
+button:active {
+    transform: scale(1.01);
+}
+
+button:hover {
+    background-color: black;
+    color: white;
+
+}
+
+fieldset {
+    border: 0;
+    margin: 1em;
+}
+
+form div {
+    display: flex;
+    flex-direction: column;
+    margin: 1em;
+}
+
+form h1 {
+    color: black;
+    font-size: 40pt;
+    font-family: 'Fjalla One',
+        sans-serif;
+    margin: 0.5em;
+}
+
+form h2 {
+    margin: 1em;
+    color: black;
+    font-family: 'Fjalla One',
+        sans-serif;
+    font-size: 20pt;
+}
+
+label {
+    margin: 1em;
+    margin-top: 0.5em;
+    font-family: 'Fjalla One',
+        sans-serif;
+    color: black;
+    text-align: center;
+}
+
+legend {
+    margin: 1em;
+    margin-top: 0.5em;
+    font-family: 'Fjalla One',
+        sans-serif;
+    color: black;
+
+}

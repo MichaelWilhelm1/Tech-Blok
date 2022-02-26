@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <main>
+        <form action="dank.html">
+
+            <h2>Vakantiebestemming aanraden</h2>
+
+            <div>
+                <label for="voornaam">Voornaam</label>
+                <input type="text" id="voornaam" name="voornaam" required>
+            </div>
+
+            <div>
+                <label for="tussenvoegsel">Tussenvoegsel</label>
+                <input type="text" id="tussenvoegsel" name="tussenvoegsel">
+            </div>
+
+            <div>
+                <label for="achternaam">Achternaam</label>
+                <input type="text" id="achternaam" name="achternaam" required>
+            </div>
+
+            <div>
+                <label for="telefoon">Telefoonnummer</label>
+                <input type="tel" id="telefoon" name="telefoon" required>
+            </div>
+
+            <div>
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <fieldset>
+                <legend>Wat zijn je favoriete activiteiten?</legend>
+                <label for="wit">Zwemmen</label>
+                <input type="radio" id="wit" name="band" checked>
+                <label for="geel">Wandelen</label>
+                <input type="radio" id="geel" name="band" checked>
+                <label for="oranje">Fietsen</label>
+                <input type="radio" id="oranje" name="band" checked>
+            </fieldset>
+
+            <div>
+                <label for="andereband">Andere activiteiten:</label>
+                <textarea name="andereband" id="andereband"></textarea>
+            </div>
+
+            <div>
+                <button>Inschrijven</button>
+            </div>
+
+        </form>
+    </main>
+    <script src="index.js"></script>
+</body>
+
+</html>
