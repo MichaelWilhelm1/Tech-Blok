@@ -11,7 +11,7 @@ app.set('view engine', 'ejs');
 
 app.get('/', (req, res) => {
 
-    res.send('Hello wereeeeldeeeen');
+    res.render('home');
 
 })
 app.get('/profile/:name', function (req, res) {
@@ -25,7 +25,10 @@ app.get('/profile/:name', function (req, res) {
     });
 })
 app.get('/contact', (req, res) => {
-    res.send('contact');
+    res.render('contact');
+})
+app.get('/header', (req, res) => {
+    res.render('header');
 })
 app.get('/formulier', (req, res) => {
     res.send('formulier');

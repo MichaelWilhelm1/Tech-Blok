@@ -1,16 +1,41 @@
-* {
+*,
+*::after,
+*::before {
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
 }
 
-main {
-    padding-top: 4em;
-    padding-bottom: 4em;
+:root {
+    --main-color: black;
+    --secondary-color: #47A638;
+    --hightlight-color: rgb(112, 112, 248);
+    --tekst-color: black;
+    --background-color: white;
+    --background-highlight-color: #ffffff;
+
+
+    --shadow-color: #2F4F4F33;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    font-family: 'Saira', sans-serif;
+    color: var(--main-color);
+
+}
+
+header {
+    background-color: rgb(0, 0, 0);
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-
-
+    left: 0;
+    right: 0;
+    top: 0;
+    padding-left: 3em;
+    padding-right: 5em;
+    z-index: 1;
 }
 
 /*formulier*/
@@ -129,5 +154,138 @@ legend {
     font-family: 'Fjalla One',
         sans-serif;
     color: black;
+
+}
+
+/******************/
+/* navigatie */
+/******************/
+
+header nav {
+
+    flex-grow: 1;
+    font-weight: bold;
+
+}
+
+header nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    gap: 1px;
+    align-items: center;
+}
+
+header nav li {
+    flex-grow: 1;
+    min-width: 6em;
+}
+
+header nav a {
+    text-decoration: none;
+    outline: none;
+    color: white;
+    display: block;
+    text-align: center;
+    line-height: 3.5em;
+    text-transform: uppercase;
+}
+
+header nav a:hover {
+
+    color: var(--hightlight-color);
+}
+
+header nav a:focus {
+    text-decoration: underline;
+}
+
+header nav li:last-of-type a {
+    background-color: var(--secondary-color);
+    text-decoration: none;
+    outline: none;
+    color: white;
+    display: block;
+    text-align: center;
+    line-height: 3.5em;
+    text-transform: uppercase;
+}
+
+header nav li:last-of-type a:hover {
+    background-color: rgb(172, 255, 172);
+    color: var(--hightlight-color);
+}
+
+header nav li:last-of-type a:focus {
+    text-decoration: underline;
+}
+
+/******************/
+/* HAMBURGERMENU */
+/******************/
+
+.toggle-button {
+    position: fixed;
+    top: .75rem;
+    right: 2rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 40px;
+    height: 32px;
+    background-color: var(--hightlight-color);
+
+}
+
+.toggle-button .bar {
+    height: 3px;
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+}
+
+/******************/
+/* HAMBURGERMENU code wanneer die verandert
+Bron: https: //www.youtube.com/watch?v=At4B7A4GOPg */
+/******************/
+
+@media (max-width: 1155px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+        background-color: var(--main-color);
+        position: absolute;
+        right: 0;
+    }
+
+    .toggle-button {
+        display: flex;
+        border: 2px solid var(--hightlight-color);
+    }
+
+    .links.active {
+        display: block;
+    }
+
+    .links {
+        display: none;
+        width: 100%;
+    }
+
+    .links ul {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .links ul li {
+        text-align: left;
+        border-bottom: 1px solid var(--hightlight-color);
+    }
+
+    .links ul li a {
+        padding: .5rem 1rem;
+    }
+
 
 }
