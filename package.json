@@ -13,8 +13,10 @@
   "license": "MIT",
   "dependencies": {
     "camelcase": "^6.3.0",
+    "dotenv": "^16.0.0",
     "ejs": "^3.1.6",
     "express": "^4.17.2",
+    "mongodb": "^4.4.1",
     "server": "^0.0.3"
   },
   "devDependencies": {
