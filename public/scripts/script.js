@@ -18,3 +18,23 @@ function openmenu() {
     navigatie.classList.toggle("active");
 
 }
+
+function getUsers() {
+
+    fetch("https://restcountries.com/v3.1/all")
+
+        .then((results) => {
+
+            return results.json();
+
+        })
+
+        .then((data) => {
+
+            console.log(data);
+
+        });
+
+}
+
+getUsers();

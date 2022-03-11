@@ -7,9 +7,9 @@
     <%- include('includes/header'); -%>
 
     <main>
-        <form action="dank.html">
+        <form action="">
 
-            <h2>Vakantiebestemming aanraden</h2>
+            <h2>Vakantieplanner</h2>
 
             <div>
                 <label for="voornaam">Voornaam</label>
@@ -17,13 +17,8 @@
             </div>
 
             <div>
-                <label for="tussenvoegsel">Tussenvoegsel</label>
-                <input type="text" id="tussenvoegsel" name="tussenvoegsel">
-            </div>
-
-            <div>
-                <label for="achternaam">Achternaam</label>
-                <input type="text" id="achternaam" name="achternaam" required>
+                <label for="tussenvoegsel">Achternaam</label>
+                <input type="text" id="achternaam" name="achternaam">
             </div>
 
             <div>
@@ -36,23 +31,18 @@
                 <input type="email" id="email" name="email" required>
             </div>
 
-            <fieldset>
-                <legend>Wat zijn je favoriete activiteiten?</legend>
-                <label for="wit">Zwemmen</label>
-                <input type="radio" id="wit" name="band" checked>
-                <label for="geel">Wandelen</label>
-                <input type="radio" id="geel" name="band" checked>
-                <label for="oranje">Fietsen</label>
-                <input type="radio" id="oranje" name="band" checked>
-            </fieldset>
-
             <div>
-                <label for="andereband">Andere activiteiten:</label>
-                <textarea name="andereband" id="andereband"></textarea>
+                <label for="landen">Favoriete landen:</label>
+                <select id="landen" name="landen">
+                    <option value="a">A</option>
+                    <option value="b">B</option>
+                    <option value="c">C</option>
+                    <option value="d">D</option>
+                </select>
             </div>
 
             <div>
-                <button>Inschrijven</button>
+                <button>Zoek</button>
             </div>
 
         </form>

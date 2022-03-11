@@ -13,7 +13,6 @@ const {
 } = require('mongodb');
 
 let db = null;
-
 app.use(express.static('public'))
 
 app.set('view engine', 'ejs');
@@ -40,8 +39,8 @@ app.get('/contact', (req, res) => {
 app.get('/header', (req, res) => {
     res.render('header');
 })
-app.get('/formulier', (req, res) => {
-    res.send('formulier');
+app.get('/aanbeveling', (req, res) => {
+    res.render('aanbeveling');
 })
 app.get('*', function (req, res) {
 
