@@ -29,6 +29,8 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
+    float: left;
+    margin-left: 100px;
 }
 
 header {
@@ -46,8 +48,15 @@ header {
 
 /*formulier*/
 
+@media (max-width: 376px) {
+    form {
+        max-width: 20em;
+        background-color: rgb(147, 206, 255);
+        border-radius: 5px;
+    }
+}
+
 form {
-    max-width: 30em;
     background-color: rgb(147, 206, 255);
     border-radius: 5px;
 }
@@ -299,4 +308,14 @@ Bron: https: //www.youtube.com/watch?v=At4B7A4GOPg */
     }
 
 
+}
+
+main p {
+    padding: 0 10px;
+    font-weight: 600;
+}
+
+#samenvatting {
+    display: flex;
+    flex-direction: column;
 }

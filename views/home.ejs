@@ -9,21 +9,26 @@
     <main>
         <form action="">
 
-            <h2>Vakantieplanner</h2>
+            <h2>Vakantiefilter</h2>
 
             <div>
-                <label for="voornaam">Voornaam</label>
-                <input type="text" id="voornaam" name="voornaam" required>
+                <label for="countries">Favoriete landen:</label>
+                <select id="countries" name="countries" multiple="multiple"></select>
             </div>
 
             <div>
-                <label for="tussenvoegsel">Achternaam</label>
-                <input type="text" id="achternaam" name="achternaam">
+                <label for="timezone">timezone:</label>
+                <select id="timezone" name="timezone"></select>
             </div>
 
             <div>
-                <label for="telefoon">Telefoonnummer</label>
-                <input type="tel" id="telefoon" name="telefoon" required>
+                <label for="regio">Regio:</label>
+                <select id="regio" name="regio"></select>
+            </div>
+
+            <div>
+                <label for="language">Taal:</label>
+                <select id="language" name="language"></select>
             </div>
 
             <div>
@@ -32,20 +37,20 @@
             </div>
 
             <div>
-                <label for="landen">Favoriete landen:</label>
-                <select id="landen" name="landen">
-                    <option value="a">A</option>
-                    <option value="b">B</option>
-                    <option value="c">C</option>
-                    <option value="d">D</option>
-                </select>
-            </div>
-
-            <div>
                 <button>Zoek</button>
             </div>
 
         </form>
+
+        <div id="samenvatting">
+            <p>Land: <span id="country"></span></p>
+            <p>Hoofdstad: <span id="capital"></span></p>
+            <p>Landnummer: <span id="dialing-code"></span></p>
+            <p>Currencies: <span id="currencies"></span></p>
+            <p>Region: <span id="region"></span></p>
+            <p>Subregion: <span id="subregion"></span></p>
+        </div>
+
     </main>
     <script src="index.js"></script>
 </body>
