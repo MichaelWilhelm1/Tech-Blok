@@ -39,8 +39,8 @@ app.get('/contact', (req, res) => {
 app.get('/header', (req, res) => {
     res.render('header');
 })
-app.get('/aanbeveling', (req, res) => {
-    res.render('aanbeveling');
+app.get('/mijnlijst', (req, res) => {
+    res.render('mijnlijst');
 })
 app.get('*', function (req, res) {
 

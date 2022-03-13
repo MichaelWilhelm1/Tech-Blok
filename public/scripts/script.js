@@ -5,16 +5,6 @@ var navigatie = document.querySelector(".links");
 Hamburgermenu.addEventListener("click", openmenu);
 
 function openmenu() {
-    /* 
-    
-    Eerste oplossing:
-    if (navigatie.style.display === "none") {
-        navigatie.style.display = "block";
-    } else {
-        navigatie.style.display = "none";
-    }
-*/
-
     navigatie.classList.toggle("active");
 
 }
@@ -24,6 +14,8 @@ const countriesEl = document.getElementById('countries');
 const filterknop = document.getElementById('filter');
 const regioknoppen = filterknop.querySelectorAll('li');
 const zoekveld = document.getElementById('search');
+const filtertaal = document.getElementById('filter2');
+const taalknoppen = filtertaal.querySelectorAll('li');
 
 getCountries();
 
@@ -59,7 +51,7 @@ function displayCountries(countries) {
                         <p><strong>Hoofdstad:</strong>
                             ${country.capital}
                         </p>
-                        <p><strong>Taal:</strong>
+                        <p class ="country-language"><strong>Taal:</strong>
                             ${country.languages[0].name}
                         </p>
                     </div>
@@ -69,6 +61,7 @@ function displayCountries(countries) {
     });
 }
 
+// info voor in de console
 getinfo();
 
 async function getinfo() {
@@ -77,11 +70,6 @@ async function getinfo() {
 
     console.log(countries);
 }
-
-// openen en sluiten met display block en none in de css
-filterknop.addEventListener('click', () => {
-    filterknop.classList.toggle('open');
-});
 
 //zoek een land
 zoekveld.addEventListener('input', e => {
@@ -99,6 +87,11 @@ zoekveld.addEventListener('input', e => {
     });
 });
 
+// openen en sluiten met display block en none in de css voor regio
+filterknop.addEventListener('click', () => {
+    filterknop.classList.toggle('open');
+});
+
 // de filter op regio knop
 regioknoppen.forEach(filter => {
     filter.addEventListener('click', () => {
@@ -114,6 +107,49 @@ regioknoppen.forEach(filter => {
         });
     });
 });
+
+// openen en sluiten met display block en none in de css voor taal
+filtertaal.addEventListener('click', () => {
+    filtertaal.classList.toggle('open');
+});
+
+taalknoppen.forEach(filter2 => {
+    filter2.addEventListener('click', () => {
+        const value = filter2.innerText;
+        const talen = document.querySelectorAll('.country-language');
+
+        talen.forEach(talen => {
+            if (talen.innerText.includes(value) || value === 'All') {
+                talen.parentElement.parentElement.style.display = 'block';
+            } else {
+                talen.parentElement.parentElement.style.display = 'none';
+            }
+        });
+    });
+});
+
+
+
+/* code om de hele lijst van de api in een dropdown te krijgen
+let countries; // hier zit de data in
+
+fetch("https://restcountries.com/v2/all")
+    .then(res => res.json())
+    .then(data => initialize(data))
+    .catch(err => console.log("error", err));
+
+function initialize(countriesData) {
+    countries = countriesData;
+
+    let taal = "";
+    for (let i = 0; i < countries.length; i++) {
+        taal += `<option value="${countries[i].alpha3Code}">${countries[i].languages[0].name}</option>`;
+    }
+    document.getElementById("language").innerHTML = taal;
+
+} */
+
+
 
 
 
