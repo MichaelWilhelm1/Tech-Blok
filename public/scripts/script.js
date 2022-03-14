@@ -10,6 +10,7 @@ function openmenu() {
 }
 
 
+//Het maken van de filter heb ik gebruik gemaakt van meerdere toturials: zie bronnen (resources) Wiki
 const countriesEl = document.getElementById('countries');
 const filterknop = document.getElementById('filter');
 const regioknoppen = filterknop.querySelectorAll('li');
@@ -17,6 +18,7 @@ const zoekveld = document.getElementById('search');
 const filtertaal = document.getElementById('filter2');
 const taalknoppen = filtertaal.querySelectorAll('li');
 
+// fetch de API, wacht met het doen van de functie displayCountries totdat de data is gefetched en in json file is gezet
 getCountries();
 
 async function getCountries() {
@@ -27,7 +29,7 @@ async function getCountries() {
 }
 
 function displayCountries(countries) {
-    /* empty string */
+    /* haal 'een moment geduld weg' */
     countriesEl.innerHTML = '';
     /* countries for each is een loop */
     countries.forEach(country => {
@@ -76,7 +78,7 @@ function displayCountries(countries) {
     });
 }
 
-// info voor in de console
+// info voor in de console zodat ik naar de data kan kijken
 getinfo();
 
 async function getinfo() {
