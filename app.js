@@ -14,6 +14,9 @@ const {
 
 let db = null;
 app.use(express.static('public'))
+app.use(express.urlencoded({
+    extended: true
+}))
 
 app.set('view engine', 'ejs');
 /* routes */
@@ -72,3 +75,42 @@ app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
     connectDB().then(() => console.log("We have a connection to Mongo!"));
 })
+
+//database inhoud sturen en ophalen: hulp van Sonja
+/*
+app.post("/save-countries", (req, res) => {
+    console.log(req.body)
+
+    res.redirect("/mijnlijst")
+})*/
+
+app.post('/mijnlijst', async (req, res) => {
+
+    // landinfo toevoegen
+
+    let form = {
+
+        land: req.body.land,
+
+        populatie: req.body.populatie,
+
+        regio: req.body.regio,
+
+        capital: req.body.capital,
+
+        language: req.body.language
+    };
+
+    // connection
+
+    await db.collection('landen').insertOne(form);
+
+
+
+    // RENDER PAGE
+
+    const title = "land toegevoegd";
+
+    res.render('mijnlijst')
+
+});

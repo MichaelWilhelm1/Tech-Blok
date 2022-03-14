@@ -39,7 +39,7 @@ header {
 }
 
 /*formulier die ik eerst had gebruikt ipv filter knoppen*/
-
+/*
 @media (max-width: 376px) {
     form {
         max-width: 20em;
@@ -169,7 +169,7 @@ legend {
         sans-serif;
     color: black;
 
-}
+}*/
 
 /******************/
 /* navigatie */
@@ -412,4 +412,29 @@ h1 {
 .container.countries {
     margin-top: -40px;
     justify-content: center;
+}
+
+
+/* styling voor de forms*/
+input {
+    border: none;
+
+}
+
+input[type="submit"] {
+    background-color: lightgray;
+    color: black;
+    font-weight: bold;
+    border: 0;
+    padding: .7em;
+    transition: .3s;
+}
+
+input[type="submit"]:active {
+    transform: scale(1.01);
+}
+
+input[type="submit"]:hover {
+    background-color: black;
+    color: white;
 }

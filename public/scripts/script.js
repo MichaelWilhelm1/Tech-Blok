@@ -35,26 +35,41 @@ function displayCountries(countries) {
         countryEl.classList.add('card');
 
         countryEl.innerHTML =
-            `               
+            `        
+            
                  <div class="">
+                 <form action = "/mijnlijst" method = "post">
                     <div>
                         <img src="${country.flag}" alt="germany">
                     </div>
+
                     <div class="card-body">
-                        <h2 class="country-name">${country.name}</h2>
-                        <p><strong>Populatie:</strong>
-                            ${country.population}
-                        </p>
-                        <p class="country-region"><strong>Regio:</strong>
+                    <h2 class="country-name">${country.name}</h2>
+                    <p class="country-region"><strong>Regio:</strong>
                             ${country.region}
                         </p>
-                        <p><strong>Hoofdstad:</strong>
-                            ${country.capital}
-                        </p>
-                        <p class ="country-language"><strong>Taal:</strong>
+                    <p class ="country-language"><strong>Taal:</strong>
                             ${country.languages[0].name}
                         </p>
+                        <label for="land">Land:</label>
+                            <input type="text" name="land" id="land" value="${country.name}">
+
+                        <label for="populatie">Populatie:</label>
+                            <input type="text" name="populatie" id="populatie" value="${country.population}">
+                        
+                        <label for="regio">Regio:</label>
+                            <input type="text" name="regio" id="regio" value="${country.region}">
+ 
+                        <label for="capital">Hoofdstad:</label>
+                            <input type="text" name="capital" id="capital" value="${country.capital}">
+
+                        <label for="language">Taal:</label>
+                            <input type="text" name="language" id="language"  value="${country.languages[0].name}">
+
+                       
                     </div>
+                    <input type = "submit" value = "Submit">
+                    </form>
                 </div>`;
 
         countriesEl.appendChild(countryEl);
@@ -232,3 +247,26 @@ function getCountries() {
 
 getCountries();
 */
+
+/* 
+                 <div class="">
+
+                    <div>
+                        <img src="${country.flag}" alt="germany">
+                    </div>
+                    <div class="card-body">
+                        <h2 class="country-name">${country.name}</h2>
+                        <p><strong>Populatie:</strong>
+                            ${country.population}
+                        </p>
+                        <p class="country-region"><strong>Regio:</strong>
+                            ${country.region}
+                        </p>
+                        <p><strong>Hoofdstad:</strong>
+                            ${country.capital}
+                        </p>
+                        <p class ="country-language"><strong>Taal:</strong>
+                            ${country.languages[0].name}
+                        </p>
+                    </div>
+                </div>`; */
