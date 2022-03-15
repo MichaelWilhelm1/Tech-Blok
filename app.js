@@ -42,8 +42,13 @@ app.get('/contact', (req, res) => {
 app.get('/header', (req, res) => {
     res.render('header');
 })
-app.get('/mijnlijst', (req, res) => {
-    res.render('mijnlijst');
+app.get('/mijnlijst', async (req, res) => {
+    const allelanden = await db.collection('landen').find().toArray();
+    const title = "Mijn landen";
+    res.render('mijnlijst', {
+        title,
+        allelanden
+    });
 })
 app.get('*', function (req, res) {
 
@@ -105,12 +110,16 @@ app.post('/mijnlijst', async (req, res) => {
 
     await db.collection('landen').insertOne(form);
 
+    const allelanden = await db.collection('landen').find().toArray();
 
 
-    // RENDER PAGE
+    // RENDER PAGINA
 
-    const title = "land toegevoegd";
+    const title = "Mijn landen";
 
-    res.render('mijnlijst')
+    res.render('mijnlijst', {
+        title,
+        allelanden
+    });
 
 });

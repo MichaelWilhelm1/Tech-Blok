@@ -74,6 +74,7 @@ function displayCountries(countries) {
                     </form>
                 </div>`;
 
+        //stuur de landen door op de manier hierboven
         countriesEl.appendChild(countryEl);
     });
 }
@@ -94,7 +95,7 @@ zoekveld.addEventListener('input', e => {
         value
     } = e.target;
     const landnaam = document.querySelectorAll('.country-name');
-
+    // bron: Florin Pop tutorial how to make a filter
     landnaam.forEach(name => {
         if (name.innerText.toLowerCase().includes(value.toLowerCase())) {
             name.parentElement.parentElement.style.display = 'block';

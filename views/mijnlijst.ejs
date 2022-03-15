@@ -6,6 +6,18 @@
 <body>
     <%- include('includes/header'); -%>
     <main>
+        <h1><%= title %></h1>
+
+        <% allelanden.forEach(function(landen){ %>
+
+        <section>
+            <h2><%= landen.land %></h2>
+            <h3><%= landen.populatie %></h3>
+            <h3><%= landen.regio %></h3>
+            <h3><%= landen.capital %></h3>
+            <h3><%= landen.language %></h3>
+        </section>
+        <% }) %>
 
     </main>
 
