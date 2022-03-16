@@ -129,7 +129,7 @@ app.post('/mijnlijst', async (req, res) => {
 
 app.post("/delete/:id",
     async (req, res) => {
-        //await mongoose.connect('mongodb+srv://MichaelWilhelm:MKEzet66@bloktech.xaowg.mongodb.net');
+
         db.collection('landen').deleteOne({
             _id: ObjectId(req.params.id)
         })

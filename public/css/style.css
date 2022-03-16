@@ -357,7 +357,6 @@ h1 {
     font-size: 14px;
     padding: 20px;
     margin: 10px;
-    margin-bottom: 16px;
     position: relative;
 }
 
@@ -437,4 +436,28 @@ input[type="submit"]:active {
 input[type="submit"]:hover {
     background-color: black;
     color: white;
+}
+
+/*Mijnlijst*/
+#mijnlijst main {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 0;
+    max-width: 1440px;
+    padding: 30px;
+    position: relative;
+}
+
+#mijnlijst section {
+    background-color: white;
+    width: 300px;
+    padding: 10px;
+    margin: 10px;
+
+}
+
+#mijnlijst h1 {
+    margin-left: 40px;
+    margin-top: 40px;
 }
