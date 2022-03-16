@@ -12,6 +12,9 @@ const {
     ObjectId
 } = require('mongodb');
 
+const mongoose = require("mongoose");
+const myId = mongoose.Types.ObjectId;
+
 let db = null;
 app.use(express.static('public'))
 app.use(express.urlencoded({
@@ -123,3 +126,12 @@ app.post('/mijnlijst', async (req, res) => {
     });
 
 });
+
+app.post("/delete/:id",
+    async (req, res) => {
+        //await mongoose.connect('mongodb+srv://MichaelWilhelm:MKEzet66@bloktech.xaowg.mongodb.net');
+        db.collection('landen').deleteOne({
+            _id: ObjectId(req.params.id)
+        })
+        res.redirect("/mijnlijst");
+    });
