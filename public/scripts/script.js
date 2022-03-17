@@ -98,9 +98,9 @@ zoekveld.addEventListener('input', e => {
     // bron: Florin Pop tutorial how to make a filter
     landnaam.forEach(name => {
         if (name.innerText.toLowerCase().includes(value.toLowerCase())) {
-            name.parentElement.parentElement.style.display = 'block';
+            name.parentElement.parentElement.parentElement.style.display = 'block';
         } else {
-            name.parentElement.parentElement.style.display = 'none';
+            name.parentElement.parentElement.parentElement.style.display = 'none';
         }
     });
 });
@@ -118,9 +118,9 @@ regioknoppen.forEach(filter => {
 
         landregio.forEach(region => {
             if (region.innerText.includes(value) || value === 'All') {
-                region.parentElement.parentElement.style.display = 'block';
+                region.parentElement.parentElement.parentElement.style.display = 'block';
             } else {
-                region.parentElement.parentElement.style.display = 'none';
+                region.parentElement.parentElement.parentElement.style.display = 'none';
             }
         });
     });
@@ -138,9 +138,9 @@ taalknoppen.forEach(filter2 => {
 
         talen.forEach(talen => {
             if (talen.innerText.includes(value) || value === 'All') {
-                talen.parentElement.parentElement.style.display = 'block';
+                talen.parentElement.parentElement.parentElement.style.display = 'block';
             } else {
-                talen.parentElement.parentElement.style.display = 'none';
+                talen.parentElement.parentElement.parentElement.style.display = 'none';
             }
         });
     });

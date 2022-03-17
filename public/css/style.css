@@ -249,7 +249,7 @@ header nav li:last-of-type a:focus {
     width: 40px;
     height: 32px;
     background-color: var(--hightlight-color);
-
+    z-index: 1;
 }
 
 .toggle-button .bar {

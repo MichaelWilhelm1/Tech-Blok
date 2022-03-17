@@ -160,12 +160,3 @@ app.post("/delete/:id",
     });
 
 //Sam slotenmaker vertelde over ObjectId(req.params.id) ipv dat ik _id: MyId moest gebruiken
-
-async function getCountries() {
-    const res = await fetch('https://restcountries.com/v2/all');
-    const countries = await res.json();
-
-    console.log(countries);
-}
-
-getCountries();
