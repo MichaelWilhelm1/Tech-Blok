@@ -25,13 +25,13 @@ async function getCountries() {
     const res = await fetch('https://restcountries.com/v2/all');
     const countries = await res.json();
 
-    displayCountries(countries);
+    /*displayCountries(countries);*/
 }
-
+/*  
 function displayCountries(countries) {
-    /* haal 'een moment geduld weg' */
+    /* haal 'een moment geduld weg' 
     countriesEl.innerHTML = '';
-    /* countries for each is een loop */
+    /* countries for each is een loop *
     countries.forEach(country => {
         const countryEl = document.createElement('div');
         countryEl.classList.add('card');
@@ -77,7 +77,7 @@ function displayCountries(countries) {
         //stuur de landen door op de manier hierboven
         countriesEl.appendChild(countryEl);
     });
-}
+}*/
 
 // info voor in de console zodat ik naar de data kan kijken
 getinfo();

@@ -50,7 +50,44 @@
 
         <section>
             <div class="container countries" id="countries">
-                <h2>Moment geduld aub...</h2>
+
+                <% countries.forEach((country) => { %>
+                <div class="card">
+                    <form action="/mijnlijst" method="post">
+                        <div>
+                            <img src=<%= country.flag %> alt="vlag">
+                        </div>
+
+                        <div class="card-body">
+                            <h2 class="country-name"><%= country.name %></h2>
+                            <p class="country-region"><strong>Regio:</strong>
+                                <%= country.region %>
+                            </p>
+                            <p class="country-language"><strong>Taal:</strong>
+                                <%= country.languages[0].name %>
+                            </p>
+                            <label for="land">Land:</label>
+                            <input type="text" name="land" id="land" value="<%= country.name %>">
+
+                            <label for="populatie">Populatie:</label>
+                            <input type="text" name="populatie" id="populatie" value="<%= country.population %>">
+
+                            <label for="regio">Regio:</label>
+                            <input type="text" name="regio" id="regio" value="<%= country.population %>">
+
+                            <label for="capital">Hoofdstad:</label>
+                            <input type="text" name="capital" id="capital" value="<%= country.capital %>">
+
+                            <label for="language">Taal:</label>
+                            <input type="text" name="language" id="language" value="<%= country.languages[0].name %>">
+
+
+                        </div>
+                        <input type="submit" value="Submit">
+                    </form>
+                </div>
+                <% }) %>
+
             </div>
         </section>
 

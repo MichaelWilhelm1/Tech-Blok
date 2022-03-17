@@ -1,3 +1,6 @@
+//express zorgt ervoor dat je jouw site localhost kan hosten 
+//en pagina's kan maken met app.get
+
 const express = require('express')
 
 const app = express()
@@ -12,21 +15,30 @@ const {
     ObjectId
 } = require('mongodb');
 
+// connect mongoose
 const mongoose = require("mongoose");
 const myId = mongoose.Types.ObjectId;
+
+const fetch = require('node-fetch');
 
 let db = null;
 app.use(express.static('public'))
 app.use(express.urlencoded({
     extended: true
 }))
-
+// gebruik van ejs
 app.set('view engine', 'ejs');
 /* routes */
 
-app.get('/', (req, res) => {
+app.get('/', async (req, res) => {
 
-    res.render('home');
+    const ress = await fetch('https://restcountries.com/v2/all');
+    const countries = await ress.json();
+
+    res.render('home', {
+        countries: countries
+
+    });
 
 })
 app.get('/profile/:name', function (req, res) {
@@ -39,12 +51,21 @@ app.get('/profile/:name', function (req, res) {
         data: data
     });
 })
-app.get('/contact', (req, res) => {
-    res.render('contact');
-})
+/*app.get('/contact', async (req, res) => {
+    const ress = await fetch('https://restcountries.com/v2/all');
+    const countries = await ress.json();
+
+    res.render('contact', {
+        countries: countries
+
+    });
+
+})*/
 app.get('/header', (req, res) => {
     res.render('header');
 })
+
+// mijn lijst, rendert een title en allelanden dus landen.land etc die later worden ingesteld
 app.get('/mijnlijst', async (req, res) => {
     const allelanden = await db.collection('landen').find().toArray();
     const title = "Mijn landen";
@@ -62,6 +83,7 @@ app.get('*', function (req, res) {
 /*****************************************************
  * Connect to database
  ****************************************************/
+// Sonja haar uitleg
 async function connectDB() {
     const uri = process.env.DB_URI;
     const client = new MongoClient(uri, {
@@ -94,7 +116,7 @@ app.post("/save-countries", (req, res) => {
 
 app.post('/mijnlijst', async (req, res) => {
 
-    // landinfo toevoegen
+    // landinfo toevoegen via het id die in script.js is aangegeven in het aanmaken van formulier
 
     let form = {
 
@@ -110,13 +132,13 @@ app.post('/mijnlijst', async (req, res) => {
     };
 
     // connection
-
+    // stuurt het als een form
     await db.collection('landen').insertOne(form);
 
     const allelanden = await db.collection('landen').find().toArray();
 
 
-    // RENDER PAGINA
+    // render de gestuurde data naar pagina
 
     const title = "Mijn landen";
 
@@ -127,6 +149,7 @@ app.post('/mijnlijst', async (req, res) => {
 
 });
 
+// delete functie
 app.post("/delete/:id",
     async (req, res) => {
 
@@ -135,3 +158,14 @@ app.post("/delete/:id",
         })
         res.redirect("/mijnlijst");
     });
+
+//Sam slotenmaker vertelde over ObjectId(req.params.id) ipv dat ik _id: MyId moest gebruiken
+
+async function getCountries() {
+    const res = await fetch('https://restcountries.com/v2/all');
+    const countries = await res.json();
+
+    console.log(countries);
+}
+
+getCountries();
