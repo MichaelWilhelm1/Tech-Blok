@@ -2,12 +2,14 @@
   "name": "backend-oefeningen",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "camelcase index.js",
     "precompress": "{{ executes BEFORE the `compress` script }}",
     "compress": "{{ run command to compress files }}",
-    "postcompress": "{{ executes AFTER `compress` script }}"
+    "postcompress": "{{ executes AFTER `compress` script }}",
+    "start": "node app.js",
+    "startdev": "nodemon app.js"
   },
   "author": "Michael Wilhelm",
   "license": "MIT",
