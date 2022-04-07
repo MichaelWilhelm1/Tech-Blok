@@ -461,3 +461,8 @@ input[type="submit"]:hover {
     margin-left: 40px;
     margin-top: 40px;
 }
+
+#map {
+    height: 80vh;
+    width: 50vw;
+}
