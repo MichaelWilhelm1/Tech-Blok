@@ -462,7 +462,15 @@ input[type="submit"]:hover {
     margin-top: 40px;
 }
 
+/* De map */
 #map {
     height: 80vh;
-    width: 50vw;
+    width: 100vw;
+    position: relative;
+}
+
+#loading {
+    position: absolute;
+    text-align: center;
+
 }

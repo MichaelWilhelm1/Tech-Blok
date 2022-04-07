@@ -30,7 +30,64 @@ function setupMap(center) {
             mapboxgl: mapboxgl
         }));
 
+    var marker = new mapboxgl.Marker();
 
+    function add_marker(event) {
+        var coordinates = event.lngLat;
+        console.log('Lng:', coordinates.lng, 'Lat:', coordinates.lat);
+        marker.setLngLat(coordinates).addTo(map);
+    }
+
+    map.on('click', add_marker);
+
+
+    //Code voorbeeld: https://codepen.io/wavyknife/pen/mENvpG
+    map.on('load', function () {
+        // Add a GeoJSON source containing the state polygons.
+        map.addSource('states', {
+            'type': 'geojson',
+            'data': 'https://d2ad6b4ur7yvpq.cloudfront.net/naturalearth-3.3.0/ne_50m_admin_0_countries.geojson'
+        });
+
+        // Add a layer showing the state polygons.
+        map.addLayer({
+            'id': 'states-layer',
+            'type': 'fill',
+            'source': 'states',
+            'paint': {
+                'fill-color': 'rgba(200, 100, 240, 0)'
+            }
+        });
+    });
+
+
+    // When a click event occurs near a polygon, open a popup at the location of
+    // the feature, with description HTML from its properties.
+    map.on('click', function (e) {
+        var features = map.queryRenderedFeatures(e.point, {
+            layers: ['states-layer']
+        });
+        if (!features.length) {
+            return;
+        }
+
+        var feature = features[0];
+
+        var popup = new mapboxgl.Popup()
+            .setLngLat(map.unproject(e.point))
+            .setHTML(feature.properties.name)
+            .addTo(map);
+
+    });
+
+    // Use the same approach as above to indicate that the symbols are clickable
+    // by changing the cursor style to 'pointer'.
+    map.on('mousemove', function (e) {
+        var features = map.queryRenderedFeatures(e.point, {
+            layers: ['states-layer']
+        });
+        map.getCanvas().style.cursor = (features.length) ? 'pointer' : '';
+    });
 }
 
 setTimeout(() => {

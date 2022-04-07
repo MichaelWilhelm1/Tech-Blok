@@ -6,18 +6,19 @@
 <body>
     <%- include('includes/header'); -%>
 
-    <div id='map'></div>
-
-
-
     <main>
+
+        <section id="loading">
+            <h1>Een moment geduld alsjeblieft... De map wordt ingeladen!</h1>
+        </section>
+        <div id='map'></div>
 
         <section>
             <div class="container">
                 <input id="search" class="search" type="text" placeholder="Zoek een land" />
 
                 <div class="dropdown" id="filter">
-                    Kies een regio
+                    Choose a region
                     <ul>
                         <li>All</li>
                         <li>Africa</li>
@@ -28,7 +29,7 @@
                     </ul>
                 </div>
                 <div class="dropdown" id="filter2">
-                    Kies een taal
+                    Choose a language
                     <ul>
                         <li>All</li>
                         <li>Albanian</li>
