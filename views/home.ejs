@@ -14,55 +14,6 @@
         <div id='map'></div>
 
         <section>
-            <div class="dropdownregio">
-                <button class="dropdownregio__hover">Choose a region</button>
-                <div class="dropdownregio__menu">
-                    <li><input type="checkbox" name="All"> All</li>
-                    <li><input type="checkbox" name="Africa"> Africa</li>
-                    <li><input type="checkbox" name="Americas"> Americas</li>
-                    <li><input type="checkbox" name="Asia"> Asia</li>
-                    <li><input type="checkbox" name="Europe"> Europe</li>
-                    <li><input type="checkbox" name="Oceania"> Oceania</li>
-                </div>
-            </div>
-
-            <div class="dropdownregio">
-                <button class="dropdownregio__hover">Choose a language</button>
-                <div class="dropdownregio__menu">
-                    <a href="#">All</a>
-                    <a href="#">Albanian</a>
-                    <a href="#">Arabic</a>
-                    <a href="#">Armenian</a>
-                    <a href="#">Bulgarian</a>
-                    <a href="#">Catalan</a>
-                    <a href="#">Czech</a>
-                    <a href="#">Dutch</a>
-                    <a href="#">English</a>
-                    <a href="#">French</a>
-                    <a href="#">German</a>
-                    <a href="#">Japanese</a>
-                    <a href="#">Pashto</a>
-                    <a href="#">Portuguese</a>
-                    <a href="#">Spanish</a>
-                    <a href="#">Swedish</a>
-                    <a href="#">Vietnamese</a>
-                </div>
-            </div>
-        </section>
-
-        <input type="checkbox" name="Africa"> Africa
-
-        <div class="items">
-
-            <div data-type="Africa">afrika</div>
-            <div data-type="Americas">Red</div>
-            <div data-type="Asia">Circle</div>
-            <div data-type="Europe">Orange</div>
-            <div data-type="Oceania">Square</div>
-
-        </div>
-
-        <section>
             <div class="container">
                 <input id="search" class="search" type="text" placeholder="Zoek een land" />
 
@@ -104,7 +55,14 @@
         </section>
 
         <section>
-            <input type="checkbox" name="Africa"> Africa
+
+            <input type="radio" name="inputbutton" value="All"> All
+            <input type="radio" name="inputbutton" value="Africa"> Africa
+            <input type="radio" name="inputbutton" value="Americas"> Americas
+            <input type="radio" name="inputbutton" value="Asia"> Asia
+            <input type="radio" name="inputbutton" value="Europe"> Europe
+            <input type="radio" name="inputbutton" value="Oceania"> Oceania
+
             <div class="container countries" id="countries">
                 <% countries.forEach((country) => { %>
 

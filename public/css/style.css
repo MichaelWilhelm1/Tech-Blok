@@ -527,11 +527,11 @@ input[type="submit"]:hover {
 }
 
 /* CSS Menu werking*/
-input[name=Africa]:checked~.container article:not([data-type=Africa]),
-input[name=Americas]:checked~.container article:not([data-type=Americas]),
-input[name=Asia]:checked~.container article:not([data-type=Asia]),
-input[name=Europe]:checked~.container article:not([data-type=Europe]),
-input[name=Oceania]:checked~.container article:not([data-type=Oceania]) {
+input[value=Africa]:checked~.container article:not([data-type=Africa]),
+input[value=Americas]:checked~.container article:not([data-type=Americas]),
+input[value=Asia]:checked~.container article:not([data-type=Asia]),
+input[value=Europe]:checked~.container article:not([data-type=Europe]),
+input[value=Oceania]:checked~.container article:not([data-type=Oceania]) {
     display: none;
 }
 
