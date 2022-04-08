@@ -14,6 +14,55 @@
         <div id='map'></div>
 
         <section>
+            <div class="dropdownregio">
+                <button class="dropdownregio__hover">Choose a region</button>
+                <div class="dropdownregio__menu">
+                    <li><input type="checkbox" name="All"> All</li>
+                    <li><input type="checkbox" name="Africa"> Africa</li>
+                    <li><input type="checkbox" name="Americas"> Americas</li>
+                    <li><input type="checkbox" name="Asia"> Asia</li>
+                    <li><input type="checkbox" name="Europe"> Europe</li>
+                    <li><input type="checkbox" name="Oceania"> Oceania</li>
+                </div>
+            </div>
+
+            <div class="dropdownregio">
+                <button class="dropdownregio__hover">Choose a language</button>
+                <div class="dropdownregio__menu">
+                    <a href="#">All</a>
+                    <a href="#">Albanian</a>
+                    <a href="#">Arabic</a>
+                    <a href="#">Armenian</a>
+                    <a href="#">Bulgarian</a>
+                    <a href="#">Catalan</a>
+                    <a href="#">Czech</a>
+                    <a href="#">Dutch</a>
+                    <a href="#">English</a>
+                    <a href="#">French</a>
+                    <a href="#">German</a>
+                    <a href="#">Japanese</a>
+                    <a href="#">Pashto</a>
+                    <a href="#">Portuguese</a>
+                    <a href="#">Spanish</a>
+                    <a href="#">Swedish</a>
+                    <a href="#">Vietnamese</a>
+                </div>
+            </div>
+        </section>
+
+        <input type="checkbox" name="Africa"> Africa
+
+        <div class="items">
+
+            <div data-type="Africa">afrika</div>
+            <div data-type="Americas">Red</div>
+            <div data-type="Asia">Circle</div>
+            <div data-type="Europe">Orange</div>
+            <div data-type="Oceania">Square</div>
+
+        </div>
+
+        <section>
             <div class="container">
                 <input id="search" class="search" type="text" placeholder="Zoek een land" />
 
@@ -26,6 +75,7 @@
                         <li>Asia</li>
                         <li>Europe</li>
                         <li>Oceania</li>
+
                     </ul>
                 </div>
                 <div class="dropdown" id="filter2">
@@ -54,49 +104,51 @@
         </section>
 
         <section>
+            <input type="checkbox" name="Africa"> Africa
             <div class="container countries" id="countries">
-
                 <% countries.forEach((country) => { %>
-                <div class="card">
-                    <form action="/mijnlijst" method="post">
-                        <div>
-                            <img src=<%= country.flag %> alt="vlag">
-                        </div>
+                <div class="items">
+                    <div data-type="<%= country.region %>" class="card">
+                        <form action="/mijnlijst" method="post">
+                            <div>
+                                <img src=<%= country.flag %> alt="vlag">
+                            </div>
 
-                        <div class="card-body">
-                            <h2 class="country-name"><%= country.name %></h2>
-                            <p class="country-region"><strong>Regio:</strong>
-                                <%= country.region %>
-                            </p>
-                            <p class="country-language"><strong>Taal:</strong>
-                                <%= country.languages[0].name %>
-                            </p>
-                            <label for="land">Land:</label>
-                            <input type="text" name="land" id="land" value="<%= country.name %>">
+                            <div class="card-body">
+                                <h2 class="country-name"><%= country.name %></h2>
+                                <p class="country-region"><strong>Regio:</strong>
+                                    <%= country.region %>
+                                </p>
+                                <p class="country-language"><strong>Taal:</strong>
+                                    <%= country.languages[0].name %>
+                                </p>
+                                <label for="land">Land:</label>
+                                <input type="text" name="land" id="land" value="<%= country.name %>">
 
-                            <label for="populatie">Populatie:</label>
-                            <input type="text" name="populatie" id="populatie" value="<%= country.population %>">
+                                <label for="populatie">Populatie:</label>
+                                <input type="text" name="populatie" id="populatie" value="<%= country.population %>">
 
-                            <label for="regio">Regio:</label>
-                            <input type="text" name="regio" id="regio" value="<%= country.population %>">
+                                <label for="regio">Regio:</label>
+                                <input type="text" name="regio" id="regio" value="<%= country.region %>">
 
-                            <label for="capital">Hoofdstad:</label>
-                            <input type="text" name="capital" id="capital" value="<%= country.capital %>">
+                                <label for="capital">Hoofdstad:</label>
+                                <input type="text" name="capital" id="capital" value="<%= country.capital %>">
 
-                            <label for="language">Taal:</label>
-                            <input type="text" name="language" id="language" value="<%= country.languages[0].name %>">
+                                <label for="language">Taal:</label>
+                                <input type="text" name="language" id="language"
+                                    value="<%= country.languages[0].name %>">
 
 
-                        </div>
-                        <input type="submit" value="Submit">
-                    </form>
+                            </div>
+                            <input type="submit" value="Submit">
+                        </form>
+                    </div>
                 </div>
+
                 <% }) %>
 
             </div>
         </section>
-
-
 
 
 

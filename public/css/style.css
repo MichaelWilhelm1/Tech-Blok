@@ -474,3 +474,67 @@ input[type="submit"]:hover {
     text-align: center;
 
 }
+
+/* CSS Menu */
+.dropdownregio {
+    position: relative;
+    z-index: 10;
+    display: inline-block;
+}
+
+.dropdownregio__hover {
+    border-radius: 4px;
+    background-color: white;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06),
+        0 1px 2px rgba(0, 0, 0, 0.12);
+    cursor: pointer;
+    font-size: 14px;
+    padding: 20px;
+    margin: 10px;
+    position: relative;
+}
+
+.dropdownregio__hover:hover {
+    background-color: rgb(226, 220, 220);
+}
+
+.dropdownregio__menu {
+    position: absolute;
+    display: none;
+    top: 100%;
+    left: 0;
+    min-width: 200px;
+    background-color: #ffffff;
+    color: #323b40;
+    box-shadow: 0 3px 2px rgba(0, 0, 0, 0.3);
+}
+
+.dropdownregio:hover .dropdownregio__menu {
+    display: block;
+}
+
+.dropdownregio__menu a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    border-width: 0;
+    border-top: 1px solid #e0e0e0;
+}
+
+.dropdownregio__menu a:hover {
+    background-color: #f0f0f0;
+    color: #323b40;
+}
+
+/* CSS Menu werking*/
+input[name=Africa]:checked~.items div:not([data-type=Africa]),
+input[name=Americas]:checked~.items div:not([data-type=Americas]),
+input[name=Asia]:checked~.items div:not([data-type=Asia]),
+input[name=Europe]:checked~.items div:not([data-type=Europe]),
+input[name=Oceania]:checked~.items div:not([data-type=Oceania]) {
+    display: none;
+}
+
+.container.countries {
+    margin-top: 2em;
+}

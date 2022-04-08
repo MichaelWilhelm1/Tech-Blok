@@ -107,3 +107,21 @@ setTimeout(() => {
         })
     })
 }, 18000)
+
+// setTimeout(() => {
+//     const landPopup = document.querySelector('.mapboxgl-popup-content')
+//     landPopup.addEventListener('input', e => {
+//         const {
+//             value
+//         } = e.target
+//         const landnaam = document.querySelectorAll('.country-name')
+//         // bron: Florin Pop tutorial how to make a filter
+//         landnaam.forEach(name => {
+//             if (name.innerText.toLowerCase().includes(value.toLowerCase())) {
+//                 name.parentElement.parentElement.parentElement.style.display = 'block'
+//             } else {
+//                 name.parentElement.parentElement.parentElement.style.display = 'none'
+//             }
+//         })
+//     })
+// }, 18000)
