@@ -55,18 +55,35 @@
         </section>
 
         <section>
+            <h3>Welke regio's wil je weg filteren?</h3>
+            <input type="checkbox" name="inputbutton" value="Africa"> Africa
+            <input type="checkbox" name="inputbutton" value="Americas"> Americas
+            <input type="checkbox" name="inputbutton" value="Asia"> Asia
+            <input type="checkbox" name="inputbutton" value="Europe"> Europe
+            <input type="checkbox" name="inputbutton" value="Oceania"> Oceania
 
-            <input type="radio" name="inputbutton" value="All"> All
-            <input type="radio" name="inputbutton" value="Africa"> Africa
-            <input type="radio" name="inputbutton" value="Americas"> Americas
-            <input type="radio" name="inputbutton" value="Asia"> Asia
-            <input type="radio" name="inputbutton" value="Europe"> Europe
-            <input type="radio" name="inputbutton" value="Oceania"> Oceania
+            <h3>Welke talen wil je weg filteren?</h3>
+            <input type="checkbox" name="inputbuttontaal" value="Albanian"> Albanian
+            <input type="checkbox" name="inputbuttontaal" value="Arabic"> Arabic
+            <input type="checkbox" name="inputbuttontaal" value="Armenian"> Armenian
+            <input type="checkbox" name="inputbuttontaal" value="Bulgarian"> Bulgarian
+            <input type="checkbox" name="inputbuttontaal" value="Catalan"> Catalan
+            <input type="checkbox" name="inputbuttontaal" value="Czech"> Czech
+            <input type="checkbox" name="inputbuttontaal" value="Dutch"> Dutch
+            <input type="checkbox" name="inputbuttontaal" value="English"> English
+            <input type="checkbox" name="inputbuttontaal" value="French"> French
+            <input type="checkbox" name="inputbuttontaal" value="German"> German
+            <input type="checkbox" name="inputbuttontaal" value="Japanese"> Japanese
+            <input type="checkbox" name="inputbuttontaal" value="Pashto"> Pashto
+            <input type="checkbox" name="inputbuttontaal" value="Portuguese"> Portuguese
+            <input type="checkbox" name="inputbuttontaal" value="Spanish"> Spanish
+            <input type="checkbox" name="inputbuttontaal" value="Swedish"> Swedish
+            <input type="checkbox" name="inputbuttontaal" value="Vietnamese"> Vietnamese
 
             <div class="container countries" id="countries">
                 <% countries.forEach((country) => { %>
 
-                <article data-type="<%= country.region %>" class="card">
+                <article data-type="<%= country.region %>" value="<%= country.languages[0].name %>" class="card">
                     <form action="/mijnlijst" method="post">
                         <div>
                             <img src=<%= country.flag %> alt="vlag">

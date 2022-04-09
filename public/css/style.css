@@ -527,11 +527,33 @@ input[type="submit"]:hover {
 }
 
 /* CSS Menu werking*/
-input[value=Africa]:checked~.container article:not([data-type=Africa]),
-input[value=Americas]:checked~.container article:not([data-type=Americas]),
-input[value=Asia]:checked~.container article:not([data-type=Asia]),
-input[value=Europe]:checked~.container article:not([data-type=Europe]),
-input[value=Oceania]:checked~.container article:not([data-type=Oceania]) {
+
+/* CSS REGIO FILTER */
+input[value=Africa]:checked~.container article[data-type=Africa],
+input[value=Americas]:checked~.container article[data-type=Americas],
+input[value=Asia]:checked~.container article[data-type=Asia],
+input[value=Europe]:checked~.container article[data-type=Europe],
+input[value=Oceania]:checked~.container article[data-type=Oceania] {
+    display: none;
+}
+
+/* CSS TALEN FILTER */
+input[value=Albanian]:checked~.container article[value=Albanian],
+input[value=Arabic]:checked~.container article[value=Arabic],
+input[value=Armenian]:checked~.container article[value=Armenian],
+input[value=Bulgarian]:checked~.container article[value=Bulgarian],
+input[value=Catalan]:checked~.container article[value=Catalan],
+input[value=Czech]:checked~.container article[value=Czech],
+input[value=Dutch]:checked~.container article[value=Dutch],
+input[value=English]:checked~.container article[value=English],
+input[value=French]:checked~.container article[value=French],
+input[value=German]:checked~.container article[value=German],
+input[value=Japanese]:checked~.container article[value=Japanese],
+input[value=Pashto]:checked~.container article[value=Pashto],
+input[value=Portuguese]:checked~.container article[value=Portuguese],
+input[value=Spanish]:checked~.container article[value=Spanish],
+input[value=Swedish]:checked~.container article[value=Swedish],
+input[value=Vietnamese]:checked~.container article[value=Vietnamese] {
     display: none;
 }
 
