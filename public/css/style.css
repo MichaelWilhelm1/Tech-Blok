@@ -472,11 +472,27 @@ input[type="submit"]:hover {
 #loading {
     position: absolute;
     text-align: center;
-
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    margin-top: 5em;
 }
 
+#notloading {
+    position: absolute;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    margin-top: 7em;
+}
+
+
+
 /* CSS Menu */
-.dropdownregio {
+/* .dropdownregio {
     position: relative;
     z-index: 10;
     display: inline-block;
@@ -524,7 +540,7 @@ input[type="submit"]:hover {
 .dropdownregio__menu a:hover {
     background-color: #f0f0f0;
     color: #323b40;
-}
+} */
 
 /* CSS Menu werking*/
 

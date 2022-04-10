@@ -8,9 +8,11 @@
 
     <main>
 
-        <section id="loading">
-            <h1>Een moment geduld alsjeblieft... De map wordt ingeladen!</h1>
-        </section>
+        <h1 id="loading">Een moment geduld alsjeblieft... De map wordt ingeladen!</h1>
+        <noscript>
+            <h1 id="notloading">Oeps de map laad niet in. Zet je JavaScript aan voor de map!</h1>
+        </noscript>
+
         <div id='map'></div>
 
         <section>
@@ -55,32 +57,55 @@
         </section>
 
         <section>
-            <h3>Welke regio's wil je weg filteren?</h3>
-            <input type="checkbox" name="inputbutton" value="Africa"> Africa
-            <input type="checkbox" name="inputbutton" value="Americas"> Americas
-            <input type="checkbox" name="inputbutton" value="Asia"> Asia
-            <input type="checkbox" name="inputbutton" value="Europe"> Europe
-            <input type="checkbox" name="inputbutton" value="Oceania"> Oceania
 
-            <h3>Welke talen wil je weg filteren?</h3>
-            <input type="checkbox" name="inputbuttontaal" value="Albanian"> Albanian
-            <input type="checkbox" name="inputbuttontaal" value="Arabic"> Arabic
-            <input type="checkbox" name="inputbuttontaal" value="Armenian"> Armenian
-            <input type="checkbox" name="inputbuttontaal" value="Bulgarian"> Bulgarian
-            <input type="checkbox" name="inputbuttontaal" value="Catalan"> Catalan
-            <input type="checkbox" name="inputbuttontaal" value="Czech"> Czech
-            <input type="checkbox" name="inputbuttontaal" value="Dutch"> Dutch
-            <input type="checkbox" name="inputbuttontaal" value="English"> English
-            <input type="checkbox" name="inputbuttontaal" value="French"> French
-            <input type="checkbox" name="inputbuttontaal" value="German"> German
-            <input type="checkbox" name="inputbuttontaal" value="Japanese"> Japanese
-            <input type="checkbox" name="inputbuttontaal" value="Pashto"> Pashto
-            <input type="checkbox" name="inputbuttontaal" value="Portuguese"> Portuguese
-            <input type="checkbox" name="inputbuttontaal" value="Spanish"> Spanish
-            <input type="checkbox" name="inputbuttontaal" value="Swedish"> Swedish
-            <input type="checkbox" name="inputbuttontaal" value="Vietnamese"> Vietnamese
+            <h3 class="cssfilter">Welke regio's wil je weg filteren?</h3>
+            <input type="checkbox" name="inputbutton" value="Africa" id="Africa" class="cssfilter">
+            <label for="Africa" class="cssfilter">Africa</label>
+            <input type="checkbox" name="inputbutton" value="Americas" id="Americas" class="cssfilter">
+            <label for="Africa" class="cssfilter">Americas</label>
+            <input type="checkbox" name="inputbutton" value="Asia" id="Asia" class="cssfilter">
+            <label for="Africa" class="cssfilter">Asia</label>
+            <input type="checkbox" name="inputbutton" value="Europe" id="Europe" class="cssfilter">
+            <label for="Africa" class="cssfilter">Europe</label>
+            <input type="checkbox" name="inputbutton" value="Oceania" id="Oceania" class="cssfilter">
+            <label for="Africa" class="cssfilter">Oceania</label>
+
+            <h3 class="cssfilter">Welke talen wil je weg filteren?</h3>
+            <input type="checkbox" name="inputbuttontaal" value="Albanian" id="Albanian" class="cssfilter">
+            <label for="Albanian" class="cssfilter">Albanian</label>
+            <input type="checkbox" name="inputbuttontaal" value="Arabic" id="Arabic" class="cssfilter">
+            <label for="Arabic" class="cssfilter">Arabic</label>
+            <input type="checkbox" name="inputbuttontaal" value="Armenian" id="Armenian" class="cssfilter">
+            <label for="Armenian" class="cssfilter">Armenian</label>
+            <input type="checkbox" name="inputbuttontaal" value="Bulgarian" id="Bulgarian" class="cssfilter">
+            <label for="Bulgarian" class="cssfilter">Bulgarian</label>
+            <input type="checkbox" name="inputbuttontaal" value="Catalan" id="Catalan" class="cssfilter">
+            <label for="Catalan" class="cssfilter">Catalan</label>
+            <input type="checkbox" name="inputbuttontaal" value="Czech" id="Czech" class="cssfilter">
+            <label for="Czech" class="cssfilter">Czech</label>
+            <input type="checkbox" name="inputbuttontaal" value="Dutch" id="Dutch" class="cssfilter">
+            <label for="Dutch" class="cssfilter">Dutch</label>
+            <input type="checkbox" name="inputbuttontaal" value="English" id="English" class="cssfilter">
+            <label for="English" class="cssfilter">English</label>
+            <input type="checkbox" name="inputbuttontaal" value="French" id="French" class="cssfilter">
+            <label for="French" class="cssfilter">French</label>
+            <input type="checkbox" name="inputbuttontaal" value="German" id="German" class="cssfilter">
+            <label for="German" class="cssfilter">German</label>
+            <input type="checkbox" name="inputbuttontaal" value="Japanese" id="Japanese" class="cssfilter">
+            <label for="Japanese" class="cssfilter">Japanese</label>
+            <input type="checkbox" name="inputbuttontaal" value="Pashto" id="Pashto" class="cssfilter">
+            <label for="Pashto" class="cssfilter">Pashto</label>
+            <input type="checkbox" name="inputbuttontaal" value="Portuguese" id="Portuguese" class="cssfilter">
+            <label for="Portuguese" class="cssfilter">Portuguese</label>
+            <input type="checkbox" name="inputbuttontaal" value="Spanish" id="Spanish" class="cssfilter">
+            <label for="Spanish" class="cssfilter">Spanish</label>
+            <input type="checkbox" name="inputbuttontaal" value="Swedish" id="Swedish" class="cssfilter">
+            <label for="Swedish" class="cssfilter">Swedish</label>
+            <input type="checkbox" name="inputbuttontaal" value="Vietnamese" id="Vietnamese" class="cssfilter">
+            <label for="Vietnamese" class="cssfilter">Vietnamese</label>
 
             <div class="container countries" id="countries">
+
                 <% countries.forEach((country) => { %>
 
                 <article data-type="<%= country.region %>" value="<%= country.languages[0].name %>" class="card">

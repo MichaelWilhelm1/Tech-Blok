@@ -27,57 +27,6 @@ async function getCountries() {
 
     /*displayCountries(countries);*/
 }
-/*  
-function displayCountries(countries) {
-    /* haal 'een moment geduld weg' 
-    countriesEl.innerHTML = '';
-    /* countries for each is een loop *
-    countries.forEach(country => {
-        const countryEl = document.createElement('div');
-        countryEl.classList.add('card');
-
-        countryEl.innerHTML =
-            `        
-            
-                 <div class="">
-                 <form action = "/mijnlijst" method = "post">
-                    <div>
-                        <img src="${country.flag}" alt="germany">
-                    </div>
-
-                    <div class="card-body">
-                    <h2 class="country-name">${country.name}</h2>
-                    <p class="country-region"><strong>Regio:</strong>
-                            ${country.region}
-                        </p>
-                    <p class ="country-language"><strong>Taal:</strong>
-                            ${country.languages[0].name}
-                        </p>
-                        <label for="land">Land:</label>
-                            <input type="text" name="land" id="land" value="${country.name}">
-
-                        <label for="populatie">Populatie:</label>
-                            <input type="text" name="populatie" id="populatie" value="${country.population}">
-                        
-                        <label for="regio">Regio:</label>
-                            <input type="text" name="regio" id="regio" value="${country.region}">
- 
-                        <label for="capital">Hoofdstad:</label>
-                            <input type="text" name="capital" id="capital" value="${country.capital}">
-
-                        <label for="language">Taal:</label>
-                            <input type="text" name="language" id="language"  value="${country.languages[0].name}">
-
-                       
-                    </div>
-                    <input type = "submit" value = "Submit">
-                    </form>
-                </div>`;
-
-        //stuur de landen door op de manier hierboven
-        countriesEl.appendChild(countryEl);
-    });
-}*/
 
 // info voor in de console zodat ik naar de data kan kijken
 getinfo();
@@ -146,7 +95,11 @@ taalknoppen.forEach(filter2 => {
     });
 });
 
-
+/* https://stackoverflow.com/questions/12194435/cannot-set-property-display-of-undefined */
+var cssfilter = document.getElementsByClassName('cssfilter');
+for (var i = 0; i < cssfilter.length; i += 1) {
+    cssfilter[i].style.display = 'none';
+}
 
 /* code om de hele lijst van de api in een dropdown te krijgen
 let countries; // hier zit de data in
