@@ -57,7 +57,7 @@
         </section>
 
         <section>
-
+            <!-- Filter doormiddel van CSS -->
             <h3 class="cssfilter">Welke regio's wil je weg filteren?</h3>
             <input type="checkbox" name="inputbutton" value="Africa" id="Africa" class="cssfilter">
             <label for="Africa" class="cssfilter">Africa</label>
@@ -104,8 +104,11 @@
             <input type="checkbox" name="inputbuttontaal" value="Vietnamese" id="Vietnamese" class="cssfilter">
             <label for="Vietnamese" class="cssfilter">Vietnamese</label>
 
+
+            <!-- Container voor alle landen -->
             <div class="container countries" id="countries">
 
+                <!-- Maak voor elk land een apart kaartje -->
                 <% countries.forEach((country) => { %>
 
                 <article data-type="<%= country.region %>" value="<%= country.languages[0].name %>" class="card">

@@ -1,6 +1,7 @@
 mapboxgl.accessToken =
     'pk.eyJ1IjoibWljaGFlbHdpbGhlbG0iLCJhIjoiY2wxb3c3cWI5MTFjaDNpcXIwMm01NjBucSJ9.en0DvVzxucNF8YK1qwKURQ';
 
+// Voeg een locatie toe wanneer iemand locatie accepteert en wanneer iemand dat niet accepteert
 navigator.geolocation.getCurrentPosition(successLocatie, errorLocatie, {
     enableHighAccuracy: true
 })
@@ -107,21 +108,3 @@ setTimeout(() => {
         })
     })
 }, 12000)
-
-// setTimeout(() => {
-//     const landPopup = document.querySelector('.mapboxgl-popup-content')
-//     landPopup.addEventListener('input', e => {
-//         const {
-//             value
-//         } = e.target
-//         const landnaam = document.querySelectorAll('.country-name')
-//         // bron: Florin Pop tutorial how to make a filter
-//         landnaam.forEach(name => {
-//             if (name.innerText.toLowerCase().includes(value.toLowerCase())) {
-//                 name.parentElement.parentElement.parentElement.style.display = 'block'
-//             } else {
-//                 name.parentElement.parentElement.parentElement.style.display = 'none'
-//             }
-//         })
-//     })
-// }, 18000)
