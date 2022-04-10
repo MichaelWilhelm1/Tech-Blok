@@ -106,7 +106,7 @@ setTimeout(() => {
             }
         })
     })
-}, 18000)
+}, 12000)
 
 // setTimeout(() => {
 //     const landPopup = document.querySelector('.mapboxgl-popup-content')
